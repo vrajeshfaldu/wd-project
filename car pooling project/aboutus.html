@@ -24,7 +24,7 @@
             padding: 0 30px;
             position: sticky;
             top: 0px;
-            z-index: 1;
+            z-index: 2;
         }
 
         .left-nav {
@@ -52,7 +52,7 @@
 
         }
 
-        .left-nav a:nth-child(3) {
+        .left-nav a:nth-child(4) {
             background-color: #4848489b;
             border-radius: 20px;
             color: lightyellow;
@@ -109,7 +109,62 @@
             /* display: block; */
             justify-content: center;
             background-color: black;
-            padding-bottom: 50px;
+            /* padding-bottom: 50px; */
+        }
+
+        .mid h1 {
+            position: absolute;
+            bottom: 0px;
+            right: 40px;
+            color: white;
+            font-size: 54px;
+            font-weight: 700;
+            z-index: 1;
+
+        }
+
+        .mid img {
+            /* height: 500px; */
+            width: 100%;
+            opacity: 0.7;
+        }
+
+
+        /* .card-body p{
+            color: #ffffff;
+
+        } */
+
+        .row2 {
+            height: 250px;
+            width: 70%;
+            margin-left: 60px;
+            margin-top: 40px;
+            /* margin-right: 200px; */
+        }
+
+
+        h1,
+        h2 {
+            font-weight: 700;
+            /* color: rgba(0, 0, 139, 0.67); */
+            font-size: 38px;
+            word-spacing: 2px;
+            line-height: 70px;
+
+        }
+
+        p {
+            word-spacing: 2px;
+            line-height: 35px;
+        }
+
+         .mid2 {
+            width: 100%;
+            display: flex;
+            /* display: block; */
+            justify-content: center;
+            background-color: black;
         }
 
         .left {
@@ -117,14 +172,14 @@
             /* display: inline-block; */
             /* display: flex; */
             /* align-items: center; */
-            margin-top: 160px;
+            margin-top: 50px;
 
         }
 
         .right {
             margin-top: 40px;
             width: 50%;
-            /* margin-left: 20px; */
+            margin-left: 20px;
             /* display: inline-block; */
             text-align: left;
             /* display: flex; */
@@ -132,13 +187,15 @@
             display: flex;
             justify-content: end;
             margin-bottom: 10px;
+            margin-top: 50px;
         }
 
         .right img {
             /* display: inline-block; */
             border-radius: 15px;
-            width: 500px;
-            height: 400px;
+            width: 620px;
+            height: 560px;
+
         }
 
         h1 {
@@ -149,64 +206,13 @@
             line-height: 70px;
         }
 
-        p {
+        .mid2 p {
             line-height: 46px;
             color: #ffffff;
         }
 
-        .left button {
-            background-color: black;
-        }
 
-        .input-group-text {
-            border-radius: 0.75rem;
-        }
-
-        .form-control,
-        .form-select {
-            border-radius: 0.75rem;
-        }
-
-        .row2 {
-            background-color: black;
-            color: #ffffff;
-            width: 100%;
-            /* display: flex;
-            justify-content: center; */
-            display: block;  
-            padding-top: 40px;          
-        }
-
-        .row2 h2 {
-            color: #ffffff;
-            word-spacing: 2px;
-            line-height: 70px;
-            display: block;
-            margin-left: 100px;
-            margin-bottom: 40px;
-        }
-
-        .cards{
-            display: flex;
-            justify-content: space-evenly;
-        }
-        
-        .card{
-            background-color: black;
-
-        }
-
-        .card img{
-            width: 300px;
-            height: 190px;
-        }
-
-        /* .card-body p{
-            color: #ffffff;
-
-        } */
-
-         /* Footers */
+        /* Footers */
         .footer {
             background-color: #000;
             border-top: 1px solid #222;
@@ -256,14 +262,13 @@
             font-size: 13px;
             color: #666;
         }
-
     </style>
 </head>
 
 <body>
     <div class="main">
         <div class="nav">
-            <a href="p1_home_carPooling.html" class="logo">RideLoop</a>
+            <a href="home2.html" class="logo">RideLoop</a>
             <div class="left-nav">
                 <a href="home2.html">Ride</a>
                 <a href="drive.html">Drive</a>
@@ -286,53 +291,47 @@
         </div>
 
         <div class="mid">
-            <div class="left">
-
-                <h1>Welcome,Vrajesh. Lets get set up.</h1>
-                <p>You're only a few steps away from setting up your company's Uber for Business account. With a single
-                    platform, you can create programs to meet all your employees' or customers' travel, meal, and
-                    gifting needs.</p>
 
 
-                <!-- Get Started button -->
-                <button type="button" class="btn btn-outline-light">Sign Up Your Company</button>
+            <h1>About Us</h1>
 
-            </div>
-            <div class="right">
-                <img src="i3_business.jpg" alt="Try Again..">
-            </div>
+            <img src="i7_aboutUs.webp" alt="try again..">
+
+
+            <!-- Get Started button -->
+
+
+
 
         </div>
         <div class="row2">
-            <h2>What fits your company's needs?</h2>
+            <h2>We reimagine the way the world moves for the better</h2>
+            Movement is what we power. It's our lifeblood. It runs through our veins. It's what gets us out of bed each
+            morning. It pushes us to constantly reimagine how we can move better. For you. For all the places you want
+            to go. For all the things you want to get. For all the ways you want to earn. Across the entire world. In
+            real time. At the incredible speed of now.
 
-            <div class="cards">
 
-                <div class="card" style="width: 18rem; display: inline-block;">
-                    <img src="i4_business.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-text text-light">Employee programs</h3>
-                        <p class="card-text text-light">Our travel and meal solutions offer cost control, spending visibility, and integration with top expense providers.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem; display: inline-block;">
-                    <img src="i5_business.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-text text-light">Rides for others</h4>
-                        <p class="card-text text-light">Central helps control costs and improve operational efficiency without sacrificing customer experience.</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem; display: inline-block;">
-                    <img src="i6_business.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-text text-light">Flexible gift solutions</h4>
-                        <p class="card-text text-light">Send vouchers and gift cards for rides and meals—a perfect solution for events or gestures of appreciation.</p>
-                    </div>
-                </div>
+        </div>
+
+        <div class="mid2">
+            <div class="left">
+                <h1>About RideLoop</h1>
+                <p>CarpoolConnect is a cutting-edge carpooling platform that aims to make your daily commute more affordable and eco-friendly. We are dedicated to connecting drivers and riders for a seamless and convenient travel experience.
+
+Our mission is to reduce traffic congestion and carbon emissions while fostering a sense of community through shared rides. Whether you're heading to work, college, or an event, CarpoolConnect makes ride-sharing simple and safe.
+
+Join our community today and take the first step toward smarter commuting!.</p>
+
+
+              
+            </div>
+            <div class="right">
+                <img src="i9_AboutUs.webp" alt="Try Again..">
             </div>
         </div>
 
-         <!-- Footers -->
+        <!-- Footers -->
 
         <div class="footer">
 
@@ -386,7 +385,7 @@
             © 2025 CarpoolConnect Technologies Inc.
         </div>
     </div>
-    
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
