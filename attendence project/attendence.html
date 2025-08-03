@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Attendence Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  <style>
+    h1 {
+      margin-top: 10px;
+    }
+    
+    .bg-body-secondary {
+      padding: 20px;
+    }
+
+    #summary {
+      font-size: large;
+      font-weight: bold;
+      color: rgb(17, 17, 17);
+    }
+
+    #output {
+      font-size: large;
+      font-weight: bold;
+      margin-top: 10px;
+      color: rgb(8, 8, 8);
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-white" id="theme">
+  <h1 align="center">Student Attendence Tracker</h1>
+  <div class="bg-body-secondary mt-2 mb-2">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col"><button type="button" class="btn btn-primary" onclick="resetAttendance()">Reset
+            Attendance</button></div>
+        <div class="col"><button type="button" class="btn btn-primary" onclick="saveAttendance()">Save
+            Attendance</button></div>
+        <div class="col">
+          <button type="button" class="btn btn-primary" onclick="batch1()">Batch-3A</button>
+          <!-- <button type="button" class="btn btn-primary" onclick="batch2()">Batch-3B</button> -->
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-success" onclick="markAllPresent()">All Present</button>
+          <button type="button" class="btn btn-danger" onclick="markAllAbsent()">All Absent</button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div id="summary" align="center">Total Present : 0 | Total Absent : 0</div>
+    <div id="output" align="center"></div>
+  </div>
+
+
+  <table class="table table-dark table-hover">
+    <thead align="center">
+      <th>Roll No.</th>
+      <th>Name</th>
+      <th>Enrollment No.</th>
+      <th>Present/Absent</th>
+      <th>Status</th>
+    </thead>
+    <tbody align="center" id="studentBody"></tbody>
+  </table>
+
+  <script>
+    students = [
+      { rollNo: 101, name: "Jiya Kyada", enrollmentNo: 24010101151 },
+      { rollNo: 102, name: "Shah Dhvani", enrollmentNo: 24010101257 },
+      { rollNo: 103, name: "Saraya Mohit", enrollmentNo: 24010101251 },
+      { rollNo: 104, name: "Zalavadiya Heet", enrollmentNo: 24010101311 },
+      { rollNo: 105, name: "Darshil Dobariya", enrollmentNo: 24010101065 },
+      { rollNo: 106, name: "Nafisa Gandhi", enrollmentNo: 24010101076 },
+      { rollNo: 107, name: "Vasani Yashvi", enrollmentNo: 24010101299 },
+      { rollNo: 108, name: "Delvadiya Manavkumar", enrollmentNo: 24010101056 },
+      { rollNo: 109, name: "Ashara Palak", enrollmentNo: 24010101008 },
+      { rollNo: 110, name: "Lunagariya Greshi", enrollmentNo: 24010101158 },
+
+    ];
+
+    function batch1() {
+      tbody = document.getElementById("studentBody");
+      tbody.innerHTML = "";
+      for (i = 0; i < students.length; i++) {
+        row = "<tr>";
+        row += "<td>" + students[i].rollNo + "</td>";
+        row += "<td>" + students[i].name + "</td>";
+        row += "<td>" + students[i].enrollmentNo + "</td>";
+        row += "<td>" +
+          "<button type='button' class='btn btn-success' id='present' onclick='presentMe(" + i + ")'>Present</button> " +
+          "<button type='button' class='btn btn-danger' id='absent' onclick='absentMe(" + i + ")'>Absent</button>" +
+          "</td>";
+        row += "<td id='status" + i + "'>Pending</td>";
+        row += "</tr>";
+        tbody.innerHTML += row; 
+      }
+    }
+
+    function markAllPresent() {
+      for (i = 0; i < students.length; i++) {
+        students[i].status = "Present";
+        statusCell = document.getElementById("status" + i);
+        if (statusCell) {
+          statusCell.innerHTML = "Present";
+          statusCell.style.color = "green";
+        }
+      }
+      updateSummary();
+      saveAttendance();
+    }
+
+    function markAllAbsent() {
+      for (i = 0; i < students.length; i++) {
+        students[i].status = "Absent";
+        statusCell = document.getElementById("status" + i);
+        if (statusCell) {
+          statusCell.innerHTML = "Absent";
+          statusCell.style.color = "red";
+        }
+      }
+      updateSummary();
+      saveAttendance();
+    }
+
+    function presentMe(index) {
+      // pRef = document.getElementById("present");
+      students[index].status = "Present";
+      statusCell = document.getElementById("status" + index);
+      statusCell.innerHTML = "Present";
+      statusCell.className = "present";
+      statusCell.style.color = "green";
+      updateSummary();
+      saveAttendance();
+    }
+
+    function absentMe(index) {
+      // aRef = document.getElementById("present");
+      students[index].status = "Absent";
+      statusCell = document.getElementById("status" + index);
+      statusCell.innerHTML = "Absent";
+      statusCell.className = "absent";
+      statusCell.style.color = "red";
+            updateSummary();
+            saveAttendance();
+  
+    }
+
+    function updateSummary() {
+      present = 0;
+      absent = 0;
+      for (i = 0; i < students.length; i++) {
+        if (students[i].status == "Present") {
+          present++;
+        }
+        if (students[i].status == "Absent") {
+          absent++;
+        }
+      }
+      document.getElementById("summary").innerHTML = "Total Present : " + present + " | Total Absent : " + absent;
+
+    }
+
+    function resetAttendance() {
+      for (i = 0; i < students.length; i++) {
+        students[i].status = "Pending";
+        statusCell = document.getElementById("status" + i);
+        statusCell.innerHTML = "Pending";
+        statusCell.style.color = "";
+        document.getElementById("summary").innerHTML = "Total Present : 0 | Total Absent : 0 ";
+        document.getElementById("output").innerHTML = "";
+      }
+      // updateSummary();
+
+
+    }
+
+    function saveAttendance() {
+      absentRollnos = [];
+      for (i = 0; i < students.length; i++) {
+        if (students[i].status == "Absent") {
+          absentRollnos.push(students[i].rollNo);
+        }
+      }
+      document.getElementById("output").innerHTML = "Absent Students Roll No. is : " + absentRollnos.join(" , ");
+    }
+
+    batch1();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
