@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #000;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+      padding: 0.8rem 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ddd !important;
+    }
+    /* Hero Section */
+    .hero-section {
+      padding: 120px 0 60px;
+      background-color: #fff;
+      min-height: 650px; /* Increased height */
+      display: flex;
+      align-items: center;
+    }
+    .hero-section h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    .hero-section ul {
+      padding-left: 20px;
+      margin-bottom: 2rem;
+    }
+    .hero-section li {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+    .btn-dark-custom {
+      background-color: #000;
+      color: #fff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .btn-dark-custom:hover {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+    }
+    /* Company Needs Section */
+    .needs-section {
+      padding: 30px 0 50px;
+    }
+    .needs-section h2 {
+      font-size: 2.4rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;      
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+    }
+    .feature-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .feature-card-body {
+      padding: 20px;
+    }
+    .feature-card-body h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .feature-card-body p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+    /* Footer */
+    .footer{
+      background-color: #1c1c1c;
+      border-top: 1px solid #333;
+      padding: 40px 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer-content{
+      flex: 1 1 200px;
+      margin: 30px 0px;
+    }
+    .footer-content h4{
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .footer-content a{
+      display: block;
+      margin: 8px 0;
+      color: #bbb;
+      text-decoration: none;
+    }
+    .footer-bottom{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #1c1c1c;
+    }
+    .social-icons img,
+    .store-buttons img{
+      height: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .bottom-bar{
+      background: #111;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<!-- MAIN NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">RideTogether</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto ms-3">
+        <li class="nav-item"><a class="nav-link" href="home.html" target="_blank">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="ride.html" target="_blank">Ride</a></li>
+        <li class="nav-item"><a class="nav-link" href="offer-ride.html" target="_blank">Offer Ride</a></li>
+        <li class="nav-item"><a class="nav-link active" href="business.html" target="_blank">Business</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" target="_blank">About</a></li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <a href="help.html" class="nav-link text-white me-3">Help</a>
+        <div class="dropdown">
+          <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle fs-4 me-2"></i> Profile
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <!-- <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="#">Sign Up</a></li>
+            <li><hr class="dropdown-divider"></li> -->
+            <li><a class="dropdown-item" href="profile.html">Manage Account</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-card shadow-lg p-4 p-md-5 rounded-4">
+      <div class="row align-items-center">
+        <!-- Text Content -->
+        <div class="col-lg-6 mb-4">
+          <h1>Power your business with Carpool Connect</h1>
+          <p>Whether you're a small startup or a large enterprise, our platform helps your employees travel smarter, save costs, and reduce your carbon footprint.</p>
+          <h5 class="fw-semibold">Why choose us?</h5>
+          <ul>
+            <li>Seamless employee commute solutions</li>
+            <li>Lower costs with efficient ride-sharing</li>
+            <li>Track and manage trips with advanced dashboards</li>
+            <li>Reduce environmental impact with fewer cars</li>
+          </ul>
+          <a href="#" class="btn-dark-custom">Sign Up Your Company</a>
+        </div>
+        <!-- Image -->
+        <div class="col-lg-6 text-center">
+          <img src="business.jpg" 
+               alt="Business Travel" 
+               class="img-fluid rounded shadow-sm" style="height: 400px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT FITS YOUR COMPANY NEEDS -->
+<section class="needs-section">
+  <div class="container">
+    <h2>What fits your company's needs?</h2>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="feature-card">
+          <img src="image1.avif" alt="Employee Commute">
+          <div class="feature-card-body">
+            <h5>Employee Commute</h5>
+            <p>Provide your employees with cost-effective, eco-friendly rides to and from work, reducing parking hassles and delays.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="feature-card">
+          <img src="image2.avif" alt="Corporate Meetings">
+          <div class="feature-card-body">
+            <h5>Corporate Travel</h5>
+            <p>Streamline travel for meetings, events, and client visits with reliable ride options that fit your budget and policies.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="feature-card">
+          <img src="image3.avif" alt="Custom Solutions">
+          <div class="feature-card-body">
+            <h5>Custom Solutions</h5>
+            <p>Need something unique? Our team can design custom ride-sharing solutions tailored specifically to your organization's needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer">
+    <div class="footer-content">
+      <h4>Company</h4>
+      <a href="#">About us</a>
+      <a href="#">Our offerings</a>
+      <a href="#">Newsroom</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-content">
+      <h4>Products</h4>
+      <a href="#">Ride</a>
+      <a href="#">Drive</a>
+      <a href="#">Corporate</a>
+      <a href="#">Gift Cards</a>
+    </div>
+    <div class="footer-content">
+      <h4>Global Citizenship</h4>
+      <a href="#">Safety</a>
+      <a href="#">Sustainability</a>
+    </div>
+    <div class="footer-content">
+      <h4>Travel</h4>
+      <a href="#">Reserve</a>
+      <a href="#">Airports</a>
+      <a href="#">Cities</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="social-icons">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" alt="X"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"/>
+    </div>
+    <div class="store-buttons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40"/>
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40"/>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    © 2025 CarpoolConnect Technologies Inc.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

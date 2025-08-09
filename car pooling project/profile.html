@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #000;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+      padding: 0.8rem 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ddd !important;
+    }
+    /* Profile Page Layout */
+    .profile-container {
+      margin-top: 120px;
+      margin-bottom: 60px;
+    }
+    .profile-sidebar {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      height: 100%;
+    }
+    .profile-sidebar h4 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .profile-sidebar a {
+      display: block;
+      color: #333;
+      padding: 10px 0;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #eee;
+    }
+    .profile-sidebar a:hover,
+    .profile-sidebar a.active {
+      color: #000;
+      font-weight: 600;
+    }
+    .profile-content {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      height: 100%;
+    }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .profile-header img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 20px;
+      border: 3px solid #000;
+    }
+    .profile-header h3 {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .profile-header p {
+      color: #666;
+      margin-bottom: 0;
+    }
+    .profile-info h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .profile-info p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+    /* Footer */
+    .footer{
+      background-color: #1c1c1c;
+      border-top: 1px solid #333;
+      padding: 40px 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer-content{
+      flex: 1 1 200px;
+      margin: 30px 0px;
+    }
+    .footer-content h4{
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .footer-content a{
+      display: block;
+      margin: 8px 0;
+      color: #bbb;
+      text-decoration: none;
+    }
+    .footer-bottom{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: #1c1c1c;
+    }
+    .social-icons img,
+    .store-buttons img{
+      height: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .bottom-bar{
+      background: #111;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="#">RideTogether</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto ms-3">
+        <li class="nav-item"><a class="nav-link" href="home.html" target="_blank">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="ride.html" target="_blank">Ride</a></li>
+        <li class="nav-item"><a class="nav-link" href="offer-ride.html" target="_blank">Offer Ride</a></li>
+        <li class="nav-item"><a class="nav-link" href="business.html" target="_blank">Business</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" target="_blank">About</a></li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <a href="#" class="nav-link text-white me-3">Help</a>
+        <div class="dropdown">
+          <a class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle fs-4 me-2"></i> Profile
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <!-- <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="#">Sign Up</a></li>
+            <li><hr class="dropdown-divider"></li> -->
+            <li><a class="dropdown-item" href="profile.html">Manage Account</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PROFILE PAGE -->
+<div class="container profile-container">
+  <div class="row g-4">
+    <!-- Sidebar -->
+    <div class="col-lg-3">
+      <div class="profile-sidebar">
+        <h4>My Profile</h4>
+        <a href="#" class="active"><i class="bi bi-person me-2"></i> Overview</a>
+        <a href="#"><i class="bi bi-clock-history me-2"></i> Ride History</a>
+        <a href="#"><i class="bi bi-car-front me-2"></i> Offered Rides</a>
+        <a href="#"><i class="bi bi-wallet2 me-2"></i> Payments</a>
+        <a href="#"><i class="bi bi-gear me-2"></i> Settings</a>
+        <a href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="col-lg-9">
+      <div class="profile-content">
+        <div class="profile-header">
+          <img src="https://images.unsplash.com/photo-1603415526960-f8f0a81b33fd?auto=format&fit=crop&w=500&q=80" alt="Profile Picture">
+          <div>
+            <h3>Vrajesh faldu</h3>
+            <p>vrajeshfaldu@gamil.com</p>
+          </div>
+        </div>
+        <div class="profile-info">
+          <h5>Personal Information</h5>
+          <p><strong>Phone:</strong> +91 6353803277</p>
+          <p><strong>City:</strong> Rajkot, India</p>
+          <p><strong>Member Since:</strong> Jan 2025</p>
+
+          <h5>Ride Statistics</h5>
+          <p><strong>Rides Taken:</strong> 120</p>
+          <p><strong>Rides Offered:</strong> 45</p>
+          <p><strong>Ratings:</strong> 4.8 / 5</p>
+
+          <a href="#" class="btn btn-dark px-4 py-2 rounded-pill mt-3">Edit Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer">
+    <div class="footer-content">
+      <h4>Company</h4>
+      <a href="#">About us</a>
+      <a href="#">Our offerings</a>
+      <a href="#">Newsroom</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-content">
+      <h4>Products</h4>
+      <a href="#">Ride</a>
+      <a href="#">Drive</a>
+      <a href="#">Corporate</a>
+      <a href="#">Gift Cards</a>
+    </div>
+    <div class="footer-content">
+      <h4>Global Citizenship</h4>
+      <a href="#">Safety</a>
+      <a href="#">Sustainability</a>
+    </div>
+    <div class="footer-content">
+      <h4>Travel</h4>
+      <a href="#">Reserve</a>
+      <a href="#">Airports</a>
+      <a href="#">Cities</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="social-icons">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" alt="X"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"/>
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"/>
+    </div>
+    <div class="store-buttons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="40"/>
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="40"/>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    © 2025 CarpoolConnect Technologies Inc.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
